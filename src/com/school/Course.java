@@ -5,7 +5,6 @@ public class Course {
     private int courseId;
     private String courseName;
 
-    // Constructor to initialize courseName and auto-generate ID
     public Course(String courseName) {
         this.courseId = nextCourseIdCounter++;
         this.courseName = courseName;
@@ -19,7 +18,7 @@ public class Course {
         return courseName;
     }
 
-    public void displayCourse() {
+    public void displayDetails() {
         System.out.println("Course ID: C" + courseId + ", Course Name: " + courseName);
     }
 }
