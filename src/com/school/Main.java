@@ -1,27 +1,28 @@
 package com.school;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to Attendance Management Project!");
+        System.out.println("Welcome to Attendance Management Project - Part 5");
 
-        Student s1 = new Student("Alice");
-        Student s2 = new Student("Bob");
-        Student s3 = new Student("Charlie");
+        Student s1 = new Student("Alice", 20);
+        Student s2 = new Student("Bob", 22);
 
-        Course c1 = new Course("Mathematics");
-        Course c2 = new Course("Science");
+        Teacher t1 = new Teacher("Mr. Smith", 40, "Mathematics");
+        Teacher t2 = new Teacher("Ms. Johnson", 35, "Science");
 
-        List<AttendanceRecord> attendanceLog = new ArrayList<>();
-        attendanceLog.add(new AttendanceRecord(s1.getStudentId(), c1.getCourseId(), "Present"));
-        attendanceLog.add(new AttendanceRecord(s2.getStudentId(), c2.getCourseId(), "Absent"));
-        attendanceLog.add(new AttendanceRecord(s3.getStudentId(), c1.getCourseId(), "Late")); // Invalid
+        Staff st1 = new Staff("Mr. Brown", 45, "Lab Assistant");
+        Staff st2 = new Staff("Ms. Green", 30, "Librarian");
 
-        System.out.println("\n--- Attendance Records ---");
-        for (AttendanceRecord record : attendanceLog) {
-            record.displayRecord();
-        }
+        System.out.println("\n--- Students ---");
+        s1.displayInfo();
+        s2.displayInfo();
+
+        System.out.println("\n--- Teachers ---");
+        t1.displayInfo();
+        t2.displayInfo();
+
+        System.out.println("\n--- Staff ---");
+        st1.displayInfo();
+        st2.displayInfo();
     }
 }
