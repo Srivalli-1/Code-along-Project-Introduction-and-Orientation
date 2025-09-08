@@ -1,16 +1,18 @@
 package com.school;
 
 public class Course {
-    private String courseCode;
+    private static int nextCourseIdCounter = 101;
+    private int courseId;
     private String courseName;
 
-    public Course(String courseCode, String courseName) {
-        this.courseCode = courseCode;
+    // Constructor to initialize courseName and auto-generate ID
+    public Course(String courseName) {
+        this.courseId = nextCourseIdCounter++;
         this.courseName = courseName;
     }
 
-    public String getCourseCode() {
-        return courseCode;
+    public int getCourseId() {
+        return courseId;
     }
 
     public String getCourseName() {
@@ -18,6 +20,6 @@ public class Course {
     }
 
     public void displayCourse() {
-        System.out.println("Course Code: " + courseCode + ", Course Name: " + courseName);
+        System.out.println("Course ID: C" + courseId + ", Course Name: " + courseName);
     }
 }
