@@ -1,11 +1,13 @@
 package com.school;
 
 public class Student {
+    private static int nextStudentIdCounter = 1;
     private int studentId;
     private String studentName;
 
-    public Student(int studentId, String studentName) {
-        this.studentId = studentId;
+    // Constructor to initialize studentName and auto-generate ID
+    public Student(String studentName) {
+        this.studentId = nextStudentIdCounter++;
         this.studentName = studentName;
     }
 
