@@ -1,30 +1,27 @@
 package com.school;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Attendance Management Project!");
 
-        // Create Student Array with auto-generated IDs
-        Student[] students = new Student[4];
-        students[0] = new Student("Alice");
-        students[1] = new Student("Bob");
-        students[2] = new Student("Charlie");
-        students[3] = new Student("Daisy");
+        Student s1 = new Student("Alice");
+        Student s2 = new Student("Bob");
+        Student s3 = new Student("Charlie");
 
-        // Create Course Array with auto-generated IDs
-        Course[] courses = new Course[3];
-        courses[0] = new Course("Mathematics");
-        courses[1] = new Course("Science");
-        courses[2] = new Course("English");
+        Course c1 = new Course("Mathematics");
+        Course c2 = new Course("Science");
 
-        System.out.println("\n--- Student Details ---");
-        for (Student student : students) {
-            student.displayStudent();
-        }
+        List<AttendanceRecord> attendanceLog = new ArrayList<>();
+        attendanceLog.add(new AttendanceRecord(s1.getStudentId(), c1.getCourseId(), "Present"));
+        attendanceLog.add(new AttendanceRecord(s2.getStudentId(), c2.getCourseId(), "Absent"));
+        attendanceLog.add(new AttendanceRecord(s3.getStudentId(), c1.getCourseId(), "Late")); // Invalid
 
-        System.out.println("\n--- Course Details ---");
-        for (Course course : courses) {
-            course.displayCourse();
+        System.out.println("\n--- Attendance Records ---");
+        for (AttendanceRecord record : attendanceLog) {
+            record.displayRecord();
         }
     }
 }

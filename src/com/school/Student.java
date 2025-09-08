@@ -3,23 +3,22 @@ package com.school;
 public class Student {
     private static int nextStudentIdCounter = 1;
     private int studentId;
-    private String studentName;
+    private String name;
 
-    // Constructor to initialize studentName and auto-generate ID
-    public Student(String studentName) {
+    public Student(String name) {
         this.studentId = nextStudentIdCounter++;
-        this.studentName = studentName;
+        this.name = name;
     }
 
     public int getStudentId() {
         return studentId;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public String getName() {
+        return name;
     }
 
-    public void displayStudent() {
-        System.out.println("Student ID: " + studentId + ", Name: " + studentName);
+    public void displayDetails() {
+        System.out.println("Student ID: " + studentId + ", Name: " + name);
     }
 }
